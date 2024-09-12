@@ -37,34 +37,33 @@ To alleviate this problem, we propose a **Center-guided Depth-aware** strategy t
     </thead>
     <tbody>
         <tr>
-            <td style="text-align:center;">MonoEF</td>
-            <td style="text-align:center;"><i>CVPR21</i></td>
-            <td style="text-align:center;">V</td>
-            <td style="text-align:center;">29.03</td>
-            <td style="text-align:center;">19.70</td>
-            <td style="text-align:center;">17.26</td>
-            <td style="text-align:center;">21.29</td>
-            <td style="text-align:center;">13.87</td>
-            <td style="text-align:center;">11.71</td>
-            <td style="text-align:center;">-</td>
-            <td style="text-align:center;">-</td>
-            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">MonoDETR</td>
+            <td style="text-align:center;"><i>ICCV23</i></td>
+            <td style="text-align:center;">VD</td>
+            <td style="text-align:center;">32.20</td>
+            <td style="text-align:center;">21.45</td>
+            <td style="text-align:center;">18.68</td>
+            <td style="text-align:center;">24.52</td>
+            <td style="text-align:center;">16.26</td>
+            <td style="text-align:center;">13.93</td>
+            <td style="text-align:center;">28.84</td>
+            <td style="text-align:center;">20.61</td>
+            <td style="text-align:center;">16.38</td>
         </tr>
         <tr>
-            <td style="text-align:center;">MonoRCNN</td>
-            <td style="text-align:center;"><i>ICCV21</i></td>
-            <td style="text-align:center;">V</td>
-            <td style="text-align:center;">25.48</td>
-            <td style="text-align:center;">18.11</td>
-            <td style="text-align:center;">14.10</td>
-            <td style="text-align:center;">18.36</td>
-            <td style="text-align:center;">12.65</td>
-            <td style="text-align:center;">10.03</td>
-            <td style="text-align:center;">16.61</td>
-            <td style="text-align:center;">13.19</td>
-            <td style="text-align:center;">10.65</td>
+            <td style="text-align:center;">MonoCD</td>
+            <td style="text-align:center;"><i>CVPR24</i></td>
+            <td style="text-align:center;">VD</td>
+            <td style="text-align:center;">33.41</td>
+            <td style="text-align:center;">22.81</td>
+            <td style="text-align:center;">19.57</td>
+            <td style="text-align:center;">25.53</td>
+            <td style="text-align:center;">16.59</td>
+            <td style="text-align:center;">14.53</td>
+            <td style="text-align:center;">28.34</td>
+            <td style="text-align:center;">20.85</td>
+            <td style="text-align:center;">16.13</td>
         </tr>
-        <!-- Continue adding rows similarly -->
         <tr>
             <td rowspan="2" style="text-align:center;"><b>Occlude3D (Ours)</b></td>
             <td style="text-align:center;"><i>None</i></td>
@@ -81,10 +80,17 @@ To alleviate this problem, we propose a **Center-guided Depth-aware** strategy t
         </tr>
         <tr>
             <td colspan="2" style="text-align:center;"><i>Improvement v.s. second-best</i></td>
-            <td style="text-align:center;" colspan="3"><span style="color:green;">+0.74</span>, <span style="color:green;">+3.40</span>, <span style="color:green;">+2.50</span></td>
-            <td style="text-align:center;" colspan="3"><span style="color:green;">+1.52</span>, <span style="color:green;">+1.61</span>, <span style="color:green;">+2.22</span></td>
-            <td style="text-align:center;" colspan="3"><span style="color:green;">+2.32</span>, <span style="color:green;">+2.30</span>, <span style="color:green;">+3.10</span></td>
-        </tr>
+            <td style="text-align:center;">+0.74</td>
+            <td style="text-align:center;">+3.40</td>
+            <td style="text-align:center;">+2.50</td>
+            <td style="text-align:center;">+1.52</td>
+            <td style="text-align:center;">+1.61</td>
+            <td style="text-align:center;">+2.22</td>
+            <td style="text-align:center;">+2.32</td>
+            <td style="text-align:center;">+2.30</td>
+            <td style="text-align:center;">+3.10</td>
+    </tr>
+
     </tbody>
 </table>
 
