@@ -8,7 +8,7 @@ Monocular 3D object detection is increasingly popular in autonomous driving rese
 
 We propose a strategy called **Center-guided Depth-aware** to capture the **implicit positional relationships among instances**, called Occlude3D. Specifically, we design the Center-Feature Fusion Module (CFM) and Decoupled Depth-Feature Module (DDFM) to process the input visual feature and depth feature into learnable queries, and we utilize a Center-guided decoder to facilitate depth interaction between objects and scene information, thus deriving implicit spatial constraints among scene targets. On KITTI benchmark with monocular images as input, Occlude3D achieves state-of-the-art performance. Compared to several transformer-based models, it attains peak performance with a reduced number of model parameters and superior operational efficiency.
 
-![]\Imgs\Fig2.png)
+![](\Imgs\Fig2.png)
 
 ## Main result
 
