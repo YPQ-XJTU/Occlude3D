@@ -4,31 +4,90 @@
 
 ## Abstract
 
-Monocular 3D object detection is increasingly popular in autonomous driving research owing to its cost and time efficiency. The main focus of current research is on independently detecting targets, while accuracy declines notably when occluded targets are present, which is a critical and urgent challenge. It is insufficient to rely solely on the local traits of individual objects to offer a holistic depiction of the scene-level 3D object attributes, as it ignores the implicit spatial relationships among diverse instances.
+Monocular 3D object detection is getting increasingly popular in autonomous driving research owing to its cost and time efficiency. Current methods rely on detecting independent targets, while accuracy declines notably when occlusion occurs, which is a critical and urgent challenge. Relying solely on local features of a single object cannot capture the complete 3D properties of objects in a scene, as it ignores the implicit spatial relationships between different instances. 
 
-We propose a strategy called **Center-guided Depth-aware** to capture the **implicit positional relationships among instances**, called Occlude3D. Specifically, we design the Center-Feature Fusion Module (CFM) and Decoupled Depth-Feature Module (DDFM) to process the input visual feature and depth feature into learnable queries, and we utilize a Center-guided decoder to facilitate depth interaction between objects and scene information, thus deriving implicit spatial constraints among scene targets. On KITTI benchmark with monocular images as input, Occlude3D achieves state-of-the-art performance. Compared to several transformer-based models, it attains peak performance with a reduced number of model parameters and superior operational efficiency.
+To alleviate this problem, we propose a **Center-guided Depth-aware** strategy to capture the positional relationships among instances, called Occlude3D.  Specifically, we design a Center Feature Fusion Module (CFM)  to process the input visual feature and depth feature into learnable queries, and we also propose an Occlusion-Aware Decoder that infers implicit spatial constraints between objects through deep interaction between central visual features and depth features. On the KITTI benchmark, our method significantly increases the state-of-the-art methods by **9.7\%** and **15.2\%** in the moderate and the hard categories. Besides, our method demonstrates significant performance on the Waymo dataset as well.
 
 ![](\Imgs\Fig2.png)
 
 ## Main result
+### KITTI Benchmark
 
 <table>
-    <tr>
-        <td rowspan="2",div align="center">Models</td>
-        <td colspan="3",div align="center">Val, AP<sub>3D|R40</sub></td>   
-    </tr>
-    <tr>
-        <td div align="center">Easy</td> 
-        <td div align="center">Mod.</td> 
-        <td div align="center">Hard</td> 
-    </tr>
-    <tr>
-        <td rowspan="4",div align="center">Occlude3D</td>
-        <td div align="center">31.25%</td> 
-        <td div align="center">23.36%</td> 
-        <td div align="center">18.70%</td> 
-    </tr>  
+    <thead>
+        <tr>
+            <th rowspan="2" style="text-align:center;">Approaches</th>
+            <th rowspan="2" style="text-align:center;">Venue</th>
+            <th rowspan="2" style="text-align:center;">Modality</th>
+            <th colspan="3" style="text-align:center;">Test AP<sub>BEV|R40</sub></th>
+            <th colspan="3" style="text-align:center;">Test AP<sub>3D|R40</sub></th>
+            <th colspan="3" style="text-align:center;">Val AP<sub>BEV|R40</sub></th>
+        </tr>
+        <tr>
+            <th style="text-align:center;">Easy</th>
+            <th style="text-align:center;">Mod</th>
+            <th style="text-align:center;">Hard</th>
+            <th style="text-align:center;">Easy</th>
+            <th style="text-align:center;">Mod</th>
+            <th style="text-align:center;">Hard</th>
+            <th style="text-align:center;">Easy</th>
+            <th style="text-align:center;">Mod</th>
+            <th style="text-align:center;">Hard</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align:center;">MonoEF</td>
+            <td style="text-align:center;"><i>CVPR21</i></td>
+            <td style="text-align:center;">V</td>
+            <td style="text-align:center;">29.03</td>
+            <td style="text-align:center;">19.70</td>
+            <td style="text-align:center;">17.26</td>
+            <td style="text-align:center;">21.29</td>
+            <td style="text-align:center;">13.87</td>
+            <td style="text-align:center;">11.71</td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <td style="text-align:center;">MonoRCNN</td>
+            <td style="text-align:center;"><i>ICCV21</i></td>
+            <td style="text-align:center;">V</td>
+            <td style="text-align:center;">25.48</td>
+            <td style="text-align:center;">18.11</td>
+            <td style="text-align:center;">14.10</td>
+            <td style="text-align:center;">18.36</td>
+            <td style="text-align:center;">12.65</td>
+            <td style="text-align:center;">10.03</td>
+            <td style="text-align:center;">16.61</td>
+            <td style="text-align:center;">13.19</td>
+            <td style="text-align:center;">10.65</td>
+        </tr>
+        <!-- Continue adding rows similarly -->
+        <tr>
+            <td rowspan="2" style="text-align:center;"><b>Occlude3D (Ours)</b></td>
+            <td style="text-align:center;"><i>None</i></td>
+            <td style="text-align:center;">VD</td>
+            <td style="text-align:center;"><b>34.15</b></td>
+            <td style="text-align:center;"><b>25.41</b></td>
+            <td style="text-align:center;"><b>22.07</b></td>
+            <td style="text-align:center;"><b>27.05</b></td>
+            <td style="text-align:center;"><b>18.20</b></td>
+            <td style="text-align:center;"><b>16.75</b></td>
+            <td style="text-align:center;"><b>30.76</b></td>
+            <td style="text-align:center;"><b>23.15</b></td>
+            <td style="text-align:center;"><b>19.23</b></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;"><i>Improvement v.s. second-best</i></td>
+            <td style="text-align:center;" colspan="3"><span style="color:green;">+0.74</span>, <span style="color:green;">+3.40</span>, <span style="color:green;">+2.50</span></td>
+            <td style="text-align:center;" colspan="3"><span style="color:green;">+1.52</span>, <span style="color:green;">+1.61</span>, <span style="color:green;">+2.22</span></td>
+            <td style="text-align:center;" colspan="3"><span style="color:green;">+2.32</span>, <span style="color:green;">+2.30</span>, <span style="color:green;">+3.10</span></td>
+        </tr>
+    </tbody>
 </table>
+
 
 
 
