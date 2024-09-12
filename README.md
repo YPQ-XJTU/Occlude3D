@@ -49,7 +49,7 @@ bash make.sh
 cd ../../../..
 ```
 
-4. Download [KITTI](https://www.cvlibs.net/datasets/kitti/)) datasets and prepare the directory structure as:
+4. Download [KITTI](https://www.cvlibs.net/datasets/kitti/) datasets and prepare the directory structure as:
 
 ```
 │Occlude3D/
@@ -85,8 +85,6 @@ bash test.sh configs/occlude3d.yaml
 ## Some Qualitative results
 
 ![](./Imgs/Fig3.png)
-
-![](./Imgs/Fig4.png)
 
 ## Ackonwledgement
 This repo benefits from the rxcellent [MonoDETR](https://github.com/ZrrSkywalker/MonoDETR) and [DIDM3D](https://github.com/ZrrSkywalker/MonoDETR)
