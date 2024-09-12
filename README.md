@@ -13,10 +13,10 @@ To alleviate this problem, we propose a **Center-guided Depth-aware** strategy t
 
 ## Main result
 ### KITTI Benchmark
-
+![](./Imgs/Fig5.png)
 
 ### Waymo Benchmark
-
+![](./Imgs/Fig6.png)
 
 ## Installation
 
@@ -80,7 +80,7 @@ bash test.sh configs/occlude3d.yaml
 
 ## Some Qualitative results
 
-![](C:\Users\13908\Desktop\Occulde3D\Imgs\Fig3.png)
+![](./Imgs/Fig3.png)
 
 
 
