@@ -2,6 +2,10 @@
 
 ![](./Imgs/Fig1.png)
 
+## News
+* **[2024-09]** The initial code of Occlude3D on KITTI and Waymo is released.
+* **[2024-09]** Our paper is submitted to ICRA2025.
+  
 ## Abstract
 
 Monocular 3D object detection is getting increasingly popular in autonomous driving research owing to its cost and time efficiency. Current methods rely on detecting independent targets, while accuracy declines notably when occlusion occurs, which is a critical and urgent challenge. Relying solely on local features of a single object cannot capture the complete 3D properties of objects in a scene, as it ignores the implicit spatial relationships between different instances. 
@@ -45,7 +49,7 @@ bash make.sh
 cd ../../../..
 ```
 
-4. Download KITTI datasets and prepare the directory structure as:
+4. Download [KITTI](https://www.cvlibs.net/datasets/kitti/)) datasets and prepare the directory structure as:
 
 ```
 │Occlude3D/
@@ -82,6 +86,7 @@ bash test.sh configs/occlude3d.yaml
 
 ![](./Imgs/Fig3.png)
 
+![](./Imgs/Fig4.png)
 
-
-![](C:\Users\13908\Desktop\Occulde3D\Imgs\Fig4.png)
+## Ackonwledgement
+This repo benefits from the rxcellent [MonoDETR](https://github.com/ZrrSkywalker/MonoDETR) and [DIDM3D](https://github.com/ZrrSkywalker/MonoDETR)
