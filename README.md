@@ -1,4 +1,4 @@
-# Occlude3D:Make Occlusion Clear in Monocular 3D Object Detection
+# Occlude3D:Monocular 3D Object Detection with Occlusion
 
 ![](./Imgs/Fig1.png)
 
