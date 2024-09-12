@@ -87,4 +87,4 @@ bash test.sh configs/occlude3d.yaml
 ![](./Imgs/Fig3.png)
 
 ## Ackonwledgement
-This repo benefits from the rxcellent [MonoDETR](https://github.com/ZrrSkywalker/MonoDETR) and [DIDM3D](https://github.com/ZrrSkywalker/MonoDETR)
+This repo benefits from the excellent [MonoDETR](https://github.com/ZrrSkywalker/MonoDETR) and [DIDM3D](https://github.com/ZrrSkywalker/MonoDETR).
